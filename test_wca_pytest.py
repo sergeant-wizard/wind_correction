@@ -3,7 +3,7 @@ import wca
 import numpy
 
 
-def test_solve():
+def test_solve() -> None:
     wind_dir = wca.Heading(30)
     wind_speed = 16
     true_course = wca.Heading(299)

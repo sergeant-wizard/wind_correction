@@ -1,19 +1,21 @@
+import math
+
 import numpy
 
 
 class Heading:
-    def __init__(self, course):
+    def __init__(self, course: float):
         self._course = course
 
     @property
-    def value(self):
+    def value(self) -> float:
         return self._course
 
     @property
-    def radians(self):
-        return numpy.radians(-self._course)
+    def radians(self) -> float:
+        return math.radians(-self._course)
 
-    def vector(self, radius) -> (float, float):
+    def vector(self, radius: float) -> (float, float):
         return radius * numpy.cos(self.radians), radius * numpy.sin(self.radians)
 
     def __float__(self):
